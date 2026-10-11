@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "sync": "git add -A && git commit -m 'chore: sync latest updates' && git push origin main"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
