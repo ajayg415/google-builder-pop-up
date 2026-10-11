@@ -50,6 +50,12 @@ try {
   const appSrc = readFileSync('src/App.tsx', 'utf-8');
   assert(appSrc.includes('pt-20'), 'Main container includes pt-20 clearance for fixed header');
 
+  // Verify Cloud Run deployment configuration
+  assert(existsSync('Dockerfile'), 'Production Dockerfile present for Cloud Run');
+  assert(existsSync('.dockerignore'), '.dockerignore present for clean container packaging');
+  const dockerfileContent = readFileSync('Dockerfile', 'utf-8');
+  assert(dockerfileContent.includes('EXPOSE 8080') && dockerfileContent.includes('PORT'), 'Dockerfile correctly handles Cloud Run PORT injection (8080)');
+
   // Check bundle sizes
   const files = execSync('ls -lh dist/assets', { encoding: 'utf-8' });
   assert(files.includes('.js') && files.includes('.css'), 'JavaScript and CSS bundles created');
