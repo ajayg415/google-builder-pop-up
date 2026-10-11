@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
+    "test": "node scripts/verify-cafe-suite.mjs",
     "sync": "git add -A && git commit -m 'chore: sync latest updates' && git push origin main"
   },
   "dependencies": {
