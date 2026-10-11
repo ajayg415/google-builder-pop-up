@@ -24,7 +24,7 @@ export const AppContent: React.FC = () => {
       />
 
       {/* Main Content Area */}
-      <main className="max-w-md md:max-w-xl mx-auto px-4 pt-4 space-y-4">
+      <main className="max-w-md md:max-w-xl mx-auto px-4 pt-20 space-y-4">
         {activeTab === 'customer' ? (
           <>
             {/* Customer Action Bar */}

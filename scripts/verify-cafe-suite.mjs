@@ -42,6 +42,14 @@ try {
   const htmlContent = readFileSync('dist/index.html', 'utf-8');
   assert(htmlContent.includes('Café Companion'), 'HTML title and metadata intact');
   
+  // Verify fixed non-scrolling header and mobile layout clearance
+  const navbarSrc = readFileSync('src/components/common/Navbar.tsx', 'utf-8');
+  assert(navbarSrc.includes('fixed top-0'), 'Navbar uses fixed top-0 non-scrolling position');
+  assert(navbarSrc.includes('truncate'), 'Mobile brand text includes truncation to prevent overflow');
+  
+  const appSrc = readFileSync('src/App.tsx', 'utf-8');
+  assert(appSrc.includes('pt-20'), 'Main container includes pt-20 clearance for fixed header');
+
   // Check bundle sizes
   const files = execSync('ls -lh dist/assets', { encoding: 'utf-8' });
   assert(files.includes('.js') && files.includes('.css'), 'JavaScript and CSS bundles created');
