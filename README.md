@@ -2,6 +2,8 @@
 
 > **Google Cloud Builder Pop-Up Solution**  
 > An AI-powered café companion application that transforms the waiting and ordering experience for both customers and café teams.
+> 
+> 🌐 **Live Cloud Run Deployment**: [https://cafe-companion-39713706830.us-central1.run.app](https://cafe-companion-39713706830.us-central1.run.app)
 
 ---
 
